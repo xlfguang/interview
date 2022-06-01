@@ -2,7 +2,7 @@
  * @Author: xlfguang 2684695148@qq.com
  * @Date: 2022-05-31 10:39:21
  * @LastEditors: xlfguang 2684695148@qq.com
- * @LastEditTime: 2022-05-31 15:34:53
+ * @LastEditTime: 2022-06-01 13:08:54
  * @FilePath: \daifa-uniappc:\Users\Admin\Desktop\面试题.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -32,106 +32,9 @@
 
     // 面试题2  请使用git 拉取剩余面试题 当前处于main分支 剩余面试题在dev分支 
 
-    // 面试题3  请将38行至44行代码尽量优化 最好为一行代码
-    const strArr = ['asd', 'XXX', '', '1545', '中文', 'ssssx', '', '', 'xgjhght']
-
-    let newArr = []
-    for (let i = 0; i < strArr.length; i++) {
-        const element = strArr[i];
-        if (element !== '') {
-            newArr.push(element)
-        }
-    }
-
-    // 面试题4 请将asynchronous函数改为先打印"异步代码块" 再打印"后续代码块"（可理解为接口封装 setTimeout结束才会返回后续代码需要的数据）
-
-    function asynchronous() {
-        setTimeout(() => {
-            console.log('异步代码块')
-        }, 2000)
-        console.log('后续代码块');
-    }
-    asynchronous()
-
-
-    // 面试题5  请写出一个方法 判断用户是否在两个小时内打开过页面 如果超过了两个小时 则弹出弹窗 没有超过两个小时则重新开始计时(弹窗操作可直接写open()方法代替)
 
 
 
-
-    /* 面试题6 (非必须，做完这题可直接忽略上面5题，可百度)
-     *  该方法会返回一个可以看成dom树结构的对象数组 每个对象都具有key和childArr属性 其中childArr是一个数组
-     *  childArr的长度和深度都是不确定的 请写出一个方法 获取这个dom树结构中 key值出现率在前三的节点
-     *  比如key值为 i 的对象出现了10次,key值为 span 的对象出现了5次,key值为 div 的对象出现了3次
-     *  则返回[i,span,div] 这样的数组
-     * */
-    function GetRandomDepthDoms() {
-        let domList = []
-        const DomKeys = ['p', 'a', 'i', 'span', 'img', 'div', 'header', 'nav', 'main', 'h1', 'h2', 'h3', 'h4', 'h5',
-            'h6', 'section', 'article', 'aside', 'footer', 'address', 'audio', 'video', 'pre', 'code', 'b', 'strong',
-            'em', 'i', 'u', 's', 'del', 'mark', 'small', 'big', 'sub', 'sup', 'time', 'ins', 'del', 'cite', 'q', 'dfn', 'abbr',
-            'data', 'time', 'kbd', 'samp', 'var', 'ruby', 'rt', 'rp', 'bdi', 'bdo', 'wbr', 'span', 'br', 'ins', 'del', 'img', 'iframe',
-            'tbody', 'thead', 'tfoot', 'tr', 'td']
-        const randomDom = () => {
-            let random = Math.floor(Math.random() * DomKeys.length)
-            return DomKeys[random]
-        }
-
-        const randomProbability = () => {
-            let random = Math.floor(Math.random() * (1 - 100) + 100)
-            return random <= 20 ? true : false
-        }
-        const createDomList = (arr, num) => {
-            if (num === 0) {
-                return arr
-            }
-            let obj = {
-                key: randomDom(),
-                childArr: []
-            }
-            if (randomProbability()) {
-                obj.childArr = createDomList(obj.childArr, Math.floor(Math.random() * (1 - 10) + 10))
-            }
-            arr.push(obj)
-            return createDomList(arr, num - 1)
-        }
-        createDomList(domList, 10)
-        return domList
-    }
-    const randomDomList = GetRandomDepthDoms()
-    console.log(randomDomList);
-
-
-
-//     let arr = []
-//     let numArr = []
-//     const calculateDOM = (domList) => {
-//         const calculateDOMList = (domList) => {
-//             domList.forEach(item => {
-//                 arr.push(item.key)
-//                 if (item.childArr.length > 0) {
-//                     calculateDOMList(item.childArr)
-//                 }
-//             })
-//         }
-//         calculateDOMList(domList)
-//         arr.forEach(item => {
-//             let isThereAre = numArr.find(numArritem =>  numArritem.key === item)
-//             if (isThereAre) {
-//                 isThereAre.num++
-//             } else {
-//                 numArr.push({
-//                     key: item,
-//                     num: 1
-//                  })
-//             }
-//         })
-//         numArr.sort((a, b) => {
-//             return b.num - a.num
-//         })
-//         return numArr
-//     }
-//    console.log( calculateDOM(randomDomList));
 
 
 
